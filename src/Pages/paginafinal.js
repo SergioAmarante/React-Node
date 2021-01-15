@@ -1,11 +1,12 @@
 import { useState } from "react";
+import Forms from "../componentes/forms/Forms";
 import imgfinal from "../componentes/images/Blu1.png"
 import '../componentes/paginafinal/paginafinal.css'
 function Contato(){
     async function registerComentario(evento){
         evento.preventDefault();
         let formData = new FormData (evento.target);
-        const url = 'http://localhost/entrega_projetos/back/contato-guarda.php';
+        const url = 'http://localhost:3005';
 
         fetch(url, {
             method: "POST", 
@@ -25,7 +26,7 @@ function Contato(){
                 <img src={imgfinal} width="300px" />
             </div>
             <div class="col-12">
-                    <h1><b Formulario de inscrição></b></h1>
+                    {/* <h1><b Formulario de inscrição></b></h1>
                         <form onSubmit = {registerComentario} >
                             <div class="form-group col-md-6 offset-md-3 my-1">
                                 <label for="exampleFormControlInput1">Nome</label>
@@ -40,7 +41,8 @@ function Contato(){
                                 <textarea class="form-control " name="comentario" id="comentario"></textarea>
                             </div>
                                 <button type="submit" class="btn btn-primary col-md-6 offset-md-3 my-3">Enviar</button>
-                        </form>
+                        </form> */}
+                        <Forms/>
             </div>
         </div>
     </div>
